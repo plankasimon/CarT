@@ -1,24 +1,16 @@
 .double{
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-around;
     align-items: center;
-
-}
-
-.single{
-    /*display: flex;*/
-    padding-left: 1.5vw;
 }
 
 .form{
     width: 35%;
-    margin-bottom: 25px;
-    margin: auto;
+    margin: 60px auto;
     background-color: #0B0B0B;
     color: white;
     padding: 50px;
     border-radius: 10px;
-    
 }
 
 .signup{
@@ -29,5 +21,6 @@
 
 .register{
     text-align: center;
-    font-size: 25px;
+    font-size: 40px;
+    padding-bottom: 15px;
 }
