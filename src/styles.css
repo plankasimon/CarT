@@ -21,7 +21,13 @@ body {
 }
 
 .greenLetter{
-  color: green;
+  color: #39CA3F;
+}
+
+.logo{
+  padding-left: 50px;
+  font-size: 30px;
+  color: white;
 }
 
 .btn {

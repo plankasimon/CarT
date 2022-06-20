@@ -1,4 +1,27 @@
 <nav>
-    <h1>{{title}}</h1>
-    <app-dropdown (btnClick)="dropDown()"></app-dropdown>
+    <mat-toolbar>
+        <p class="logo"><span class="greenLetter">C</span>ar<span class="greenLetter">T</span></p>
+        <span class="example-spacer"></span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Icon menu">
+            <mat-icon >keyboard_arrow_down</mat-icon>
+          </button>
+          <div class="dropMenu">
+          <mat-menu #menu="matMenu" ngClass="dropMenu">
+            <div class="menuItems">
+            <button mat-menu-item class="menuItem">
+              <span>Register</span>
+              <mat-icon class="icon">person_add</mat-icon>
+            </button>
+            <button mat-menu-item class="menuItem">
+              <span>Login</span>
+              <mat-icon class="icon">login</mat-icon>
+            </button>
+            </div>
+          </mat-menu>
+        </div>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon color="primary">account_circle</mat-icon>
+        </button>
+      </mat-toolbar>
 </nav>
+
