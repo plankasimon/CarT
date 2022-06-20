@@ -1,14 +1,13 @@
 <nav>
     <mat-toolbar>
-        <p class="logo"><span class="greenLetter">C</span>ar<span class="greenLetter">T</span></p>
+        <a routerLink="/"><p class="logo"><span class="greenLetter">C</span>ar<span class="greenLetter">T</span></p></a>
         <span class="example-spacer"></span>
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Icon menu">
-            <mat-icon >keyboard_arrow_down</mat-icon>
+            <mat-icon color="primary">keyboard_arrow_down</mat-icon>
           </button>
           <div class="dropMenu">
           <mat-menu #menu="matMenu" ngClass="dropMenu">
-            <div class="menuItems">
-            <button mat-menu-item class="menuItem">
+            <button mat-menu-item class="menuItem" routerLink="/register">
               <span>Register</span>
               <mat-icon class="icon">person_add</mat-icon>
             </button>
@@ -16,7 +15,6 @@
               <span>Login</span>
               <mat-icon class="icon">login</mat-icon>
             </button>
-            </div>
           </mat-menu>
         </div>
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">

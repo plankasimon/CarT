@@ -2,29 +2,14 @@
     flex: 1 1 auto;
   }
 
-.menuItem{
-    display: flex;
-    justify-content: space-between;
-    max-width: 200px;
-}
 
-.icon{
-    margin-top: 10px;
-}
-
-.dropMenu{
-    margin-right: 20px;
-}
-
-
-
-nav{
+mat-toolbar{
     background-color: rgb(28, 28, 28);
     min-height: 85px;
     max-height: 90px;
 }
 
-mat-toolbar{
-    padding-top: 20px;
+p.logo{
+    margin: 0;
 }
 

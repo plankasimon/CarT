@@ -1,0 +1,22 @@
+.double{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+
+}
+
+.single{
+    /*display: flex;*/
+    padding-left: 5.5vw;
+}
+
+.form{
+    width: 40%;
+    margin: auto;
+}
+
+.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 * {
   box-sizing: border-box;
@@ -19,6 +20,11 @@ body {
   background-color: rgb(49, 49, 49);
   color: white;
 }
+
+a{
+  text-decoration: none;
+}
+
 
 .greenLetter{
   color: #39CA3F;

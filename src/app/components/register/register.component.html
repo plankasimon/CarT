@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<br><br>
+
+
+<div class="form">
+    <div class="double">
+    <p>
+        <mat-form-field appearance="standard">
+          <mat-label>First name</mat-label>
+          <input matInput placeholder="Placeholder" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="standard">
+          <mat-label>Last name</mat-label>
+          <input matInput placeholder="Placeholder" required>
+        </mat-form-field>
+    </p>
+</div>
+<div class="single">
+
+        
+<p>
+    <mat-form-field appearance="standard">
+        <mat-label>Enter your email</mat-label>
+        <input type="text" matInput placeholder="adam@example.com" [formEnctype]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field appearance="standard">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Placeholder" required>
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field appearance="standard">
+      <mat-label>Confirm password</mat-label>
+      <input matInput placeholder="Placeholder" required>
+    </mat-form-field>
+</p>
+</div>  
+<div class="double">
+    <p>
+        <mat-form-field appearance="standard">
+          <mat-label>First name</mat-label>
+          <input matInput placeholder="Placeholder" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="standard">
+          <mat-label>Last name</mat-label>
+          <input matInput placeholder="Placeholder" required>
+        </mat-form-field>
+    </p>
+</div>
+<br>
+<div class="signup">
+    <button mat-raised-button color="primary">Sign Up</button>
+</div>
+
+</div>
+<br><br>
+
+<a routerLink="/">back</a>
