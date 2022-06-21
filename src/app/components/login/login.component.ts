@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { map } from 'rxjs';
+import { RegisterAuthService } from 'src/app/services/register-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -18,9 +21,29 @@ export class LoginComponent implements OnInit {
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
-  constructor() { }
+  registerForm!: FormGroup;
+
+  constructor(
+    private authService: RegisterAuthService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
+    this.registerForm = this.formBuilder.group({
+      name: [null, [Validators.required]],
+      surname: [null, [Validators.required]],
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required, Validators.minLength(6)]],
+      passwordConfirm: [null, Validators.required],
+      age: [null, Validators.required, Validators.maxLength(3)],
+    },{
+      //Validators: CustomValidators.passwordMatches
+    }
+    )
   }
+
+  
+
 
 }
