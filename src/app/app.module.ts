@@ -18,7 +18,10 @@ import {MatInputModule} from '@angular/material/input';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +43,12 @@ import { MainComponent } from './components/main/main.component';
     MatSidenavModule,
     MatListModule,
     MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatInputModule,
     
   ],

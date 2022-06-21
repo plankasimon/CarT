@@ -4,9 +4,13 @@
 
 
 mat-toolbar{
-    background-color: rgb(28, 28, 28);
+    background-color: #0b0b0b;
     min-height: 85px;
     max-height: 90px;
+}
+
+.icon{
+    margin-left: 15px;
 }
 
 p.logo{
