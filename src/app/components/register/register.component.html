@@ -1,20 +1,20 @@
 <app-navbar></app-navbar>
 <br><br>
 
-
-<div class="form" >
+<form [formGroup]="registerForm" (ngSubmit)="onUserCreate()">
+  <div class="form" >
     <p class="register">Registration</p>
     <div class="double">
     <p>
         <mat-form-field appearance="standard">
           <mat-label>First name</mat-label>
-          <input type="text" matInput required>
+          <input type="text" matInput formControlName = 'name' required >
         </mat-form-field>
     </p>
     <p>
         <mat-form-field appearance="standard">
           <mat-label>Last name</mat-label>
-          <input type="text" matInput required>
+          <input type="text" matInput formControlName = 'surname' required>
         </mat-form-field>
     </p>
 </div>
@@ -24,14 +24,14 @@
 <p>
   <mat-form-field appearance="standard">
     <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="adam@example.com" [formControl] = "email" required>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    <input type="text" matInput placeholder="adam@example.com" formControlName="email" required>
+    <!--<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
   </mat-form-field>
 </p>
 <p>
     <mat-form-field appearance="standard">
       <mat-label>Password</mat-label>
-      <input type="password" matInput placeholder="•••••••••" required>
+      <input type="password" matInput placeholder="•••••••••" formControlName = 'password' required>
     </mat-form-field>
 </p>
 <p>
@@ -45,7 +45,7 @@
     <p>
         <mat-form-field appearance="standard">
           <mat-label>Age</mat-label>
-          <input type="number" matInput required>
+          <input type="number" matInput formControlName = 'age' required>
         </mat-form-field>
     </p>
     <p>
@@ -57,7 +57,9 @@
 </div>
 <br>
 <div class="signup">
-    <button mat-raised-button color="primary">Sign Up</button>
+    <button type="submit" mat-raised-button color="primary">Sign Up</button>
 </div>
 
 </div>
+</form>
+

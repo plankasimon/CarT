@@ -1,8 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { map } from 'rxjs';
-import { RegisterAuthService } from 'src/app/services/register-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,39 +10,38 @@ import { RegisterAuthService } from 'src/app/services/register-auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+  constructor(private http: HttpClient,
+              private router: Router) { }
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+  })
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
+  url = 'http://localhost:31000/api/v1/user/login';
 
-  registerForm!: FormGroup;
-
-  constructor(
-    private authService: RegisterAuthService,
-    private formBuilder: FormBuilder,
-    private router: Router,
-    ) { }
+  onUserLogin(): void{
+    const user = this.loginForm.getRawValue();  
+    const serializedUser = JSON.stringify(user);
+    const header = new HttpHeaders({"content-type":"application/json"})
+    this.http.post(this.url, serializedUser, {headers: header}).subscribe(
+      (res) => {
+        console.log(res),
+        this.loginForm.reset(),
+        this.router.navigate(['']),
+        localStorage.getItem('token', )
+        localStorage.setItem('token', 'Basic ' )
+      },
+      (err)=> console.log(err)
+      
+    )
+   }
 
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      name: [null, [Validators.required]],
-      surname: [null, [Validators.required]],
-      email: [null, [Validators.required, Validators.email]],
-      password: [null, [Validators.required, Validators.minLength(6)]],
-      passwordConfirm: [null, Validators.required],
-      age: [null, Validators.required, Validators.maxLength(3)],
-    },{
-      //Validators: CustomValidators.passwordMatches
-    }
-    )
+
+    
   }
 
-  
 
 
 }
