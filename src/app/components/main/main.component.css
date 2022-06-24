@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    color:white;
 }
 
 .searchBut{
@@ -30,5 +31,6 @@
 .mainText{
     color: white;
     text-align: center;
+    padding-top: 50px;
     font-size: 48px;
 }

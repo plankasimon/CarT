@@ -24,16 +24,14 @@ export class LoginComponent implements OnInit {
     const user = this.loginForm.getRawValue();  
     const serializedUser = JSON.stringify(user);
     const header = new HttpHeaders({"content-type":"application/json"})
-    this.http.post(this.url, serializedUser, {headers: header}).subscribe(
+    this.http.post<{data:{apiKey:string}}>(this.url, serializedUser, {headers: header}).subscribe(
       (res) => {
-        console.log(res),
+        console.log(res.data),
         this.loginForm.reset(),
         this.router.navigate(['']),
-        localStorage.getItem('token', )
-        localStorage.setItem('token', 'Basic ' )
+        localStorage.setItem('token', 'Basic ' + res.data.apiKey)
       },
       (err)=> console.log(err)
-      
     )
    }
 
